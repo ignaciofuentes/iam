@@ -7,7 +7,7 @@ import { Role } from "aws-cdk-lib/aws-iam";
 export class IamStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    let role = new Role(this, "MyCoolRole", {
+    let role = new Role(this, "MyAwesomeRole", {
       assumedBy: new cdk.aws_iam.ServicePrincipal("ec2.amazonaws.com"),
       managedPolicies: [
         cdk.aws_iam.ManagedPolicy.fromAwsManagedPolicyName(
