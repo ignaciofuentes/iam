@@ -11,8 +11,8 @@ export class IamStack extends cdk.Stack {
     super(scope, id, props);
 
     // Read the policy document from a JSON file
-    var c = path.join(__dirname, "policies/candidate-policy.json");
-    const policyJson = fs.readFileSync(c, "utf8");
+    var policyPath = path.join(__dirname, "policies/candidate-policy.json");
+    const policyJson = fs.readFileSync(policyPath, "utf8");
     const policyDocument = PolicyDocument.fromJson(JSON.parse(policyJson));
 
     let role = new Role(this, "MyAwesomeRole", {
