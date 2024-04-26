@@ -2,6 +2,8 @@ import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
 import { PolicyDocument, Role, ServicePrincipal } from "aws-cdk-lib/aws-iam";
 import * as fs from "fs";
+import * as path from "path";
+
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class IamStack extends cdk.Stack {
@@ -9,10 +11,8 @@ export class IamStack extends cdk.Stack {
     super(scope, id, props);
 
     // Read the policy document from a JSON file
-    const policyJson = fs.readFileSync(
-      "./policies/candidate-policy.json",
-      "utf8"
-    );
+    var c = path.join(__dirname, "policies/candidate-policy.json");
+    const policyJson = fs.readFileSync(c, "utf8");
     const policyDocument = PolicyDocument.fromJson(JSON.parse(policyJson));
 
     let role = new Role(this, "MyAwesomeRole", {
