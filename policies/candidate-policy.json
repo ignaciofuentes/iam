@@ -3,8 +3,8 @@
   "Statement": [
     {
       "Effect": "Allow",
-      "Action": ["ec2:*"],
-      "Resource": "*"
+      "Action": ["s3:ListBucket"],
+      "Resource": "arn:aws:s3:::my-non-sensitive-bucket"
     }
   ]
 }
