@@ -4,7 +4,7 @@
     {
       "Effect": "Allow",
       "Action": ["s3:*"],
-      "Resource": "arn:aws:s3:::my-cool-bucket"
+      "Resource": "arn:aws:s3:::my-sensitive-bucket"
     }
   ]
 }
